@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
-    'corsheaders'
+    # 'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -29,7 +29,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'restframework2.urls'
@@ -106,9 +106,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'react/build/static')
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    "https://todofullstackapp.herokuapp.com",
-]
+# CORS_ORIGIN_WHITELIST = [
+#     "https://todofullstackapp.herokuapp.com",
+# ]
 
 
 django_heroku.settings(locals())
