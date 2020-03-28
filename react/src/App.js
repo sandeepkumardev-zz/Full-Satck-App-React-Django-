@@ -30,10 +30,10 @@ function App() {
   const handlerSubmit = e => {
     e.preventDefault();
     var csrftoken = getCookie("csrftoken");
-    var url = "http://127.0.0.1:8000/api/task-create";
+    var url = "https://todofullstackapp.herokuapp.com/api/task-create";
 
     if (edit.editing === true) {
-      var url = `http://127.0.0.1:8000/api/task-update/${edit.id}`;
+      var url = `https://todofullstackapp.herokuapp.com/api/task-update/${edit.id}`;
       setedit({ editing: false, id: null });
     }
 
@@ -65,7 +65,7 @@ function App() {
   const handlerDelete = e => {
     var csrftoken = getCookie("csrftoken");
     var delId = e.target.id;
-    fetch(`http://127.0.0.1:8000/api/task-delete/${delId}`, {
+    fetch(`https://todofullstackapp.herokuapp.com/api/task-delete/${delId}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -79,7 +79,7 @@ function App() {
   function strikeUnstrike(item) {
     var csrftoken = getCookie("csrftoken");
     item.completed = !item.completed;
-    fetch(`http://127.0.0.1:8000/api/task-update/${item.id}`, {
+    fetch(`https://todofullstackapp.herokuapp.com/api/task-update/${item.id}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -93,7 +93,7 @@ function App() {
   //  ................................... get data
   function name() {
     axios
-      .get("http://127.0.0.1:8000/api/task-list/?format=json")
+      .get("https://todofullstackapp.herokuapp.com/api/task-list/?format=json")
       .then(response => {
         setstate(response.data);
       })
